@@ -1,0 +1,50 @@
+<mat-grid-list cols="1" rowHeight="8:1">
+    <mat-grid-tile>
+        <mat-form-field style="width:80% !important">
+            <input class="example-full-width" matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+        </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <button class="button-fluid" mat-raised-button [routerLink]="['/analytics']"
+            routerLinkActive="router-link-active" color="primary"> Visual Analytics</button>
+    </mat-grid-tile>
+</mat-grid-list>
+
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
+                [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
+            </mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+                [checked]="selection.isSelected(row)" [aria-label]="checkboxLabel(row)">
+            </mat-checkbox>
+        </td>
+    </ng-container>
+    <ng-container matColumnDef="Rank">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Rank </th>
+        <td mat-cell *matCellDef="let element"> {{element.Rank}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="country">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Country</th>
+        <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="population">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Population </th>
+        <td mat-cell *matCellDef="let element"> {{element.population}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="World">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> World </th>
+        <td mat-cell *matCellDef="let element"> {{element.World}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+    </tr>
+</table>

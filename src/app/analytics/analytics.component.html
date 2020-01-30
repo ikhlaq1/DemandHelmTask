@@ -1,0 +1,31 @@
+
+<mat-grid-list cols="1" rowHeight="8:1">
+        <mat-grid-tile>
+            <button class="button-fluid" mat-raised-button [routerLink]="['/']" routerLinkActive="router-link-active"
+                color="primary"> Home</button>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+<mat-tab-group>
+    <mat-tab label="Bar Chart">
+        <div style="display: block;">
+            <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+            </canvas>
+        </div>
+    </mat-tab>
+    <mat-tab label="Pie Chart">
+        <div>
+            <div>
+                <div class="chart">
+                    <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+                        [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors"
+                        [legend]="pieChartLegend">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+</mat-tab-group>
+
+

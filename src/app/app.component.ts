@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-
+import { Component, ViewChild, Inject } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material';
+import { jsonData } from './JSONData';
+import { SelectionModel } from '@angular/cdk/collections';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +10,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'demandTable';
+  constructor() { }
+  
 }
