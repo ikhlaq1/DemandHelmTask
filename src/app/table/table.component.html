@@ -1,7 +1,7 @@
 <mat-toolbar>
     <mat-form-field style="width:80% !important">
         <input class="example-full-width" matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
-        <button [routerLink]="['/analytics']" routerLinkActive="router-link-active" mat-raised-button color="primary">
+        <button class="button-alignment" [routerLink]="['/analytics']" routerLinkActive="router-link-active" mat-raised-button color="primary">
             Go to Visual Analytics</button>
     </mat-form-field>
 

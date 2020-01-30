@@ -10,3 +10,7 @@ table {
   min-width: unset !important;
   text-align: center;
 }
+
+.button-alignment {
+  margin-left: 40px !important
+}
