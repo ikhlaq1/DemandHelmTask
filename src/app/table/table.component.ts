@@ -3,8 +3,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material';
 import { jsonData } from '../jsonData';
 import { SelectionModel } from '@angular/cdk/collections';
-import {MatButtonModule} from '@angular/material/button';
-
 export interface PeriodicElement {
   Rank: string;
   country: string;
@@ -37,7 +35,7 @@ export class TableComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(jsonData)
+    console.log(jsonData);
     this.dataSource.sort = this.sort;
   }
 

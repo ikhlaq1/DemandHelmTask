@@ -1,17 +1,12 @@
-<mat-grid-list cols="1" rowHeight="8:1">
-    <mat-grid-tile>
-        <mat-form-field style="width:80% !important">
-            <input class="example-full-width" matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
-        </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <button class="button-fluid" mat-raised-button [routerLink]="['/analytics']"
-            routerLinkActive="router-link-active" color="primary"> Visual Analytics</button>
-    </mat-grid-tile>
-</mat-grid-list>
+<mat-toolbar>
+    <mat-form-field style="width:80% !important">
+        <input class="example-full-width" matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+        <button [routerLink]="['/analytics']" routerLinkActive="router-link-active" mat-raised-button color="primary">
+            Go to Visual Analytics</button>
+    </mat-form-field>
 
-
-<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+</mat-toolbar>
+<table style="padding: 20px;" mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
     <ng-container matColumnDef="select">
         <th mat-header-cell *matHeaderCellDef>
             <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"

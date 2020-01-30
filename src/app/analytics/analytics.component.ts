@@ -25,7 +25,6 @@ export class AnalyticsComponent implements OnInit {
   public pieChartData: number[] = [1388232693, 1342512706, 326474013, 263510146, 211243220, 80945718, 80636124];
   public pieChartType: ChartType = 'pie';
   public pieChartLegend = true;
-  
 
   public data = [{
     Rank: '1',
