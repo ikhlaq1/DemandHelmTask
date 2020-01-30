@@ -3,9 +3,9 @@
             color="primary"> Home</button>
 </mat-toolbar>
 
-<mat-tab-group>
+<mat-tab-group style="padding: 20px;">
     <mat-tab label="Bar Chart">
-        <div style="display: block;">
+        <div style="display: block; padding-top:20px;">
             <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
                 [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
             </canvas>
@@ -14,7 +14,7 @@
     <mat-tab label="Pie Chart">
         <div>
             <div>
-                <div class="chart">
+                <div style=" padding-top:20px;" class="chart ">
                     <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
                         [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors"
                         [legend]="pieChartLegend">
