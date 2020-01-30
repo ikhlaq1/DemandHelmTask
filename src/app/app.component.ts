@@ -1,8 +1,4 @@
-import { Component, ViewChild, Inject } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatSort } from '@angular/material';
-import { jsonData } from './JSONData';
-import { SelectionModel } from '@angular/cdk/collections';
+import { Component} from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
